@@ -34,40 +34,17 @@ spec:
         - "1"
       containers:
       - name: podinfod
-        image: stefanprodan/podinfo:3.1.4
+        image: jcantosz/flux-test:0.0.1
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
-          containerPort: 9898
+          containerPort: 80
           protocol: TCP
-        - name: http-metrics
-          containerPort: 9797
-          protocol: TCP
-        - name: grpc
-          containerPort: 9999
-          protocol: TCP
-        command:
-        - ./podinfo
-        - --port=9898
-        - --port-metrics=9797
-        - --grpc-port=9999
-        - --grpc-service-name=podinfo
-        - --level=info
-        - --random-delay=false
-        - --random-error=false
         env:
         - name: PODINFO_UI_MESSAGE
           value: "Welcome to Flux"
         - name: PODINFO_UI_COLOR
           value: "#34577c"
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 9898
-        readinessProbe:
-          httpGet:
-            path: /readyz
-            port: 9898
         resources:
           limits:
             cpu: 1000m
