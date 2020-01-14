@@ -6,12 +6,11 @@ metadata:
   labels:
     app: podinfo
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: podinfo
   ports:
   - name: http
     port: 9898
-    nodePort: 9898
     protocol: TCP
     targetPort: http
