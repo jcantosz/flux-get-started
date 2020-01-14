@@ -1,0 +1,1 @@
+{"jobID":"3bf7a91b-c0d4-39ab-b878-294bf79b33d9","spec":{"type":"policy","cause":{"Message":"","User":"jesse \u003cjesse@antoszyk.com\u003e"},"spec":{"demo:deployment/podinfo":{"add":{"tag_all":"glob:3.10.*"},"remove":{}}}},"result":null}
